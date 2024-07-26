@@ -1,20 +1,27 @@
 pipeline {
 	agent any
+	parameters {
+	
+	string(name: 'NOM', defaultValue: 'NOM', description: 'affiche mon nom')
+	
+	text(name: 'PRESENTATION', defaultValue: 'presentation', description: 'presentez-vous')
+	
+	booleanParam(name: 'CASE', defaultValue: true, description: 'oui ou non')
+	
+	choice(name: 'CHOICE', choices: ['dev', 'recette', 'preprod', 'prod'], description: '')
+	
+	password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'secret password')
+	
+	}
 
 	stages {
 		stage('build') {
 			steps{
-				echo 'étape de build'
-			}
-		}
-		stage('test') {
-			steps{
-				echo 'étape de test'
-			}
-		}
-		stage('deploy') {
-			steps{
-				echo 'étape de deploy'
+				echo 'NOM: $NOM'
+				echo 'PRESENTATION: $PRESENTATION'
+				echo 'CASE: $CASE'
+				echo 'CHOICE: $CHOICE'
+				echo 'PASSWORD: $PASSWORD'
 			}
 		}
 	}
