@@ -13,9 +13,18 @@ pipeline {
 	password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'secret password')
 	
 	}
+	
+	options {
+		buildDiscarder(logRotator(numToKeepStr: '5'))
+		disableConcurrentBuilds()
+		retry(3)
+	}
 
 	stages {
 		stage('build') {
+		options {
+			timestamps(2)
+		}
 			steps{
 				echo "NOM: $NOM"
 				echo "PRESENTATION: $PRESENTATION"
