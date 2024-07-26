@@ -18,10 +18,10 @@ pipeline {
 		stage('build') {
 			steps{
 				echo "NOM: $NOM"
-				echo 'PRESENTATION: $PRESENTATION'
-				echo 'CASE: $CASE'
-				echo 'CHOICE: $CHOICE'
-				echo 'PASSWORD: $PASSWORD'
+				echo "PRESENTATION: $PRESENTATION"
+				echo "CASE: $CASE"
+				echo "CHOICE: $CHOICE"
+				echo "PASSWORD: $PASSWORD"
 			}
 		}
 	}
