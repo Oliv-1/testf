@@ -17,7 +17,7 @@ pipeline {
 	stages {
 		stage('build') {
 			steps{
-				echo 'NOM: $NOM'
+				echo "NOM: $NOM"
 				echo 'PRESENTATION: $PRESENTATION'
 				echo 'CASE: $CASE'
 				echo 'CHOICE: $CHOICE'
