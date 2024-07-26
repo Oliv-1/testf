@@ -23,7 +23,7 @@ pipeline {
 	stages {
 		stage('build') {
 		options {
-			timestamps(2)
+			timestamps()
 		}
 			steps{
 				echo "NOM: $NOM"
